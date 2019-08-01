@@ -87,12 +87,13 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="ArcLoss has demonstrated its power on face tasks. It enlarges inter-class distance and reduces intra-class distance. So I’m just wondering that if I use arcloss on classical classification task, what">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1564628633/blog/obj-cnt-with-atc-loss/p2_hrbevk.png">
 <meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1564626361/blog/obj-cnt-with-atc-loss/p1_epdoud.png">
-<meta property="og:updated_time" content="2019-08-01T02:47:49.359Z">
+<meta property="og:updated_time" content="2019-08-01T03:04:56.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Relationship between arcLoss and objects in an image">
 <meta name="twitter:description" content="ArcLoss has demonstrated its power on face tasks. It enlarges inter-class distance and reduces intra-class distance. So I’m just wondering that if I use arcloss on classical classification task, what">
-<meta name="twitter:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1564626361/blog/obj-cnt-with-atc-loss/p1_epdoud.png">
+<meta name="twitter:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1564628633/blog/obj-cnt-with-atc-loss/p2_hrbevk.png">
 
 
 
@@ -305,8 +306,8 @@
         <p><a href="https://arxiv.org/abs/1801.07698" target="_blank" rel="noopener">ArcLoss</a> has demonstrated its power on face tasks. It enlarges inter-class distance and reduces intra-class distance.</p>
 <p>So I’m just wondering that if I use arcloss on classical classification task, what will happen for these features? Say if I train a resnet on imgnet with arcloss, will the center object has only one object and be the most representative one? Is there any relationship between the number of objects and the distance of each image feature to its corresponding center?</p>
 <p>Firstly I extract images from voc2012 which has only one category. These images may contain one to four same objects known from their bounding box annotations.</p>
-<p>I firstly train the model without arcloss and then finetune it with arcloss(m=0.5,s=64). After that, I extract all 256-d features from training images for both model. I calculate the lowest similarity in each category and also highest similarity between different categories to demonstrate the arcloss works. The red line if from the model without arcloss.<br><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1564626361/blog/obj-cnt-with-atc-loss/p1_epdoud.png" alt="alt text" title="arcloss"></p>
-<p>I calculate the mean feature for each category. Then I calculate all distances for each image feature to the center. Then I make a histgram to show the distribution of the distance when the number of objets in one image is one or two. We can see it seems if the distance is very close, say smaller than 1, there is only images containing one object.</p>
+<p>I firstly train the model without arcloss and then finetune it with arcloss(m=0.5,s=64). After that, I extract all 256-d features from training images for both model. I calculate the lowest similarity in each category and also highest similarity between different categories to demonstrate the arcloss works. The red line if from the model without arcloss.<br><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1564628633/blog/obj-cnt-with-atc-loss/p2_hrbevk.png" alt="alt text" title="arcloss"></p>
+<p>I calculate the mean feature for each category. Then I calculate all distances for each image feature to the center. Then I make a histgram to show the distribution of the distance when the number of objets in one image is one or two. We can see it seems if the distance is very close, say smaller than 1, there is only images containing one object.<br><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1564626361/blog/obj-cnt-with-atc-loss/p1_epdoud.png" alt="alt text" title="hist"></p>
 <p>I’m not sure about this conclusion. I need to demonstate it with more experiments. The code is uploaded to my <a href="https://github.com/arxrean/Experiments/tree/master/Arcloss_Obj_Num" target="_blank" rel="noopener">github</a></p>
 
       
