@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="定义活体检测指的是检测捕捉到的人脸是真人还是照片或录制的视频。其本质是二分类问题，输入可以是单帧或多帧图片，输出则是0/1. 目前有多种方法进行检测，大致可以分为硬件检测和算法检测两种。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-03T13:22:32.728Z">
+<meta property="og:updated_time" content="2019-08-03T14:05:47.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人脸活体检测综述">
 <meta name="twitter:description" content="定义活体检测指的是检测捕捉到的人脸是真人还是照片或录制的视频。其本质是二分类问题，输入可以是单帧或多帧图片，输出则是0/1. 目前有多种方法进行检测，大致可以分为硬件检测和算法检测两种。">
@@ -303,10 +303,10 @@
         <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>活体检测指的是检测捕捉到的人脸是真人还是照片或录制的视频。其本质是二分类问题，输入可以是单帧或多帧图片，输出则是0/1. 目前有多种方法进行检测，大致可以分为硬件检测和算法检测两种。</p>
 <a id="more"></a>
 
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="Colour-Texture"><a href="#Colour-Texture" class="headerlink" title="Colour Texture"></a>Colour Texture</h2><p>该方法将单帧图片从RGB空间转化到HSV和YCbCr空间上，并分别提取LBP与LPQ特征，输入到SVM中进行训练并输出二分类结果。<br>优点：简洁高效，适合C++部署至门禁。有matlab开源代码。</p>
-<h2 id="Detecting-Pulse"><a href="#Detecting-Pulse" class="headerlink" title="Detecting Pulse"></a>Detecting Pulse</h2><p>该方法首先对捕获的人脸计算其心率分布。通过心率区分真人or图片。再使用纹理LBP分类器来区分真人or屏幕。<br>优点：使用了心率预测。 可以基于不同的攻击方式针对性的进行部署。<br>缺点：心率预测鲁棒性较差。</p>
-<h2 id="Learning-Deep-Models"><a href="#Learning-Deep-Models" class="headerlink" title="Learning Deep Models"></a>Learning Deep Models</h2><p>该方法使用深度学习模型。将该问题视为一个回归问题。输入为多帧图片，输出则是回归出的心率统计量以及Depth map。<br>优点：提出 Non-rigid Registration Layer 来对齐多帧图片的人脸非刚性运动。 性能首次超过传统方法。</p>
-<h2 id="binocular-depth"><a href="#binocular-depth" class="headerlink" title="binocular depth"></a>binocular depth</h2><p>将非真人脸作为人脸提取模型的一个类。例如mtcnn将会进行三类别的训练————真脸，假脸，背景。<br>优点：速度快，适合工业部署。<br>缺点：模型的训练过程包含多个较为繁琐和复杂的feature。</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="Colour-Texture"><a href="#Colour-Texture" class="headerlink" title="Colour Texture"></a><a href="https://ieeexplore.ieee.org/document/7454730" target="_blank" rel="noopener">Colour Texture</a></h2><p>该方法将单帧图片从RGB空间转化到HSV和YCbCr空间上，并分别提取LBP与LPQ特征，输入到SVM中进行训练并输出二分类结果。<br>优点：简洁高效，适合C++部署至门禁。有matlab开源代码。</p>
+<h2 id="Detecting-Pulse"><a href="#Detecting-Pulse" class="headerlink" title="Detecting Pulse"></a><a href="https://ieeexplore.ieee.org/document/7900300" target="_blank" rel="noopener">Detecting Pulse</a></h2><p>该方法首先对捕获的人脸计算其心率分布。通过心率区分真人or图片。再使用纹理LBP分类器来区分真人or屏幕。<br>优点：使用了心率预测。 可以基于不同的攻击方式针对性的进行部署。<br>缺点：心率预测鲁棒性较差。</p>
+<h2 id="Learning-Deep-Models"><a href="#Learning-Deep-Models" class="headerlink" title="Learning Deep Models"></a><a href="https://arxiv.org/abs/1803.11097" target="_blank" rel="noopener">Learning Deep Models</a></h2><p>该方法使用深度学习模型。将该问题视为一个回归问题。输入为多帧图片，输出则是回归出的心率统计量以及Depth map。<br>优点：提出 Non-rigid Registration Layer 来对齐多帧图片的人脸非刚性运动。 性能首次超过传统方法。</p>
+<h2 id="binocular-depth"><a href="#binocular-depth" class="headerlink" title="binocular depth"></a><a href="https://arxiv.org/abs/1808.08802" target="_blank" rel="noopener">binocular depth</a></h2><p>将非真人脸作为人脸提取模型的一个类。例如mtcnn将会进行三类别的训练————真脸，假脸，背景。<br>优点：速度快，适合工业部署。<br>缺点：模型的训练过程包含多个较为繁琐和复杂的feature。</p>
 <h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><h2 id="近红外NIR相机"><a href="#近红外NIR相机" class="headerlink" title="近红外NIR相机"></a>近红外NIR相机</h2><p>该相机的光谱波段与可见光不同。所以可以通过其产生的图片进行判断。<br>优点：对屏幕攻击的区分度较大<br>缺点：对高清彩色纸张打印的区分度较小</p>
 <h2 id="结构光-ToF设备"><a href="#结构光-ToF设备" class="headerlink" title="结构光/ToF设备"></a>结构光/ToF设备</h2><p>该设备能够对人脸进行3D重构。其具有的光学显微镜头阵列能根据脸部边缘的梯度分布进行判断检测。<br>优点：能进行精准的活体识别。<br>缺点：成本较高，具有场景特殊性。</p>
 
