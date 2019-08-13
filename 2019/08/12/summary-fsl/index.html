@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="summary,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="title: A Survey on Few-Shot Learningdate: 2019-08-12 07:06:50 tags: summaryThis is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related lite">
+<meta name="description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
+<meta name="keywords" content="summary">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AIEEEr">
+<meta property="og:title" content="A Survey on Few-Shot Learning">
 <meta property="og:url" content="https://arxrean.github.io/2019/08/12/summary-fsl/index.html">
 <meta property="og:site_name" content="AIEEEr">
-<meta property="og:description" content="title: A Survey on Few-Shot Learningdate: 2019-08-12 07:06:50 tags: summaryThis is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related lite">
+<meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-13T14:00:23.419Z">
+<meta property="og:updated_time" content="2019-08-13T14:03:23.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AIEEEr">
-<meta name="twitter:description" content="title: A Survey on Few-Shot Learningdate: 2019-08-12 07:06:50 tags: summaryThis is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related lite">
+<meta name="twitter:title" content="A Survey on Few-Shot Learning">
+<meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title> | AIEEEr</title>
+  <title>A Survey on Few-Shot Learning | AIEEEr</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">A Survey on Few-Shot Learning</h1>
         
 
         <div class="post-meta">
@@ -299,11 +300,7 @@
       
 
       
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">
- </script>
-<hr>
-<p>title: A Survey on Few-Shot Learning<br>date: 2019-08-12 07:06:50</p>
-<h2 id="tags-summary"><a href="#tags-summary" class="headerlink" title="tags: summary"></a>tags: summary</h2><p>This is a survey of few shot learning problem. Following the route of <a href="https://arxiv.org/abs/1904.05046" target="_blank" rel="noopener">Wang’s paper</a> and its structure, I read related literatures in it. I will talk some of them in the below.</p>
+        <p>This is a survey of few shot learning problem. Following the route of <a href="https://arxiv.org/abs/1904.05046" target="_blank" rel="noopener">Wang’s paper</a> and its structure, I read related literatures in it. I will talk some of them in the below.</p>
 <a id="more"></a>
 <h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><p>Augmenting data to a larger size is a very efficient way. Besides the regular geometric transformation, we can use models to learn transformation from original dataset or from other datasets which have similar (weak) labels.</p>
 <h2 id="From-same-dataset"><a href="#From-same-dataset" class="headerlink" title="From same dataset"></a>From same dataset</h2><h3 id="delta-encoder"><a href="#delta-encoder" class="headerlink" title="delta-encoder"></a><a href="https://arxiv.org/abs/1806.04734" target="_blank" rel="noopener">delta-encoder</a></h3><p>This paper proposes a variant of an Auto-Encoder network which tries to learn different transformation and applies them to generate new samples from new categories. Suppose there is a large dataset $D$ which has $C$ categories and enough training samples. Besides, there are several categories $C^(few)$ which only contain one or few samples. The delta-encoder try to input $X^a$ and $Y^a$, generating $Z$ with much smaller dimensions. The network try to regrad $Z$ as a tanformation instead of a feature containing the whole info of $X^a$. In decoder, $Z$ is again combined with $Y^a$ and tries to recover $X^a$. The pair samples are randomly sampled from the large dataset and finally become a set $set{Z}$.</p>
@@ -322,6 +319,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/summary/" rel="tag"># summary</a>
+          
+        </div>
       
 
       
@@ -481,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-summary"><span class="nav-number">1.</span> <span class="nav-text">tags: summary</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number"></span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-same-dataset"><span class="nav-number">1.</span> <span class="nav-text">From same dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-same-dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From same dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -695,6 +698,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
 
   
 
