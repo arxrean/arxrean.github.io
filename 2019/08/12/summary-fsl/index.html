@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="summary,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="AIEEEr">
-<meta property="og:url" content="https://arxrean.github.io/tags/try/index.html">
+<meta name="description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
+<meta name="keywords" content="summary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Survey on Few-Shot Learning">
+<meta property="og:url" content="https://arxrean.github.io/2019/08/12/summary-fsl/index.html">
 <meta property="og:site_name" content="AIEEEr">
+<meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-13T13:50:16.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AIEEEr">
+<meta name="twitter:title" content="A Survey on Few-Shot Learning">
+<meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://arxrean.github.io/tags/try/">
+  <link rel="canonical" href="https://arxrean.github.io/2019/08/12/summary-fsl/">
 
 
 
 
 
-  <title>Tag: try | AIEEEr</title>
+  <title>A Survey on Few-Shot Learning | AIEEEr</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,52 +219,151 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>try<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://arxrean.github.io/2019/08/12/summary-fsl/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ziyi Kou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AIEEEr">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/07/31/obj-cnt-with-atc-loss/" itemprop="url">
-              
-                <span itemprop="name">Relationship between arcLoss and objects in an image</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">A Survey on Few-Shot Learning</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-31T12:45:43+00:00" content="2019-07-31">
-          07-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-12T07:06:50+00:00">
+                2019-08-12
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This is a survey of few shot learning problem. Following the route of <a href="https://arxiv.org/abs/1904.05046" target="_blank" rel="noopener">Wang’s paper</a> and its structure, I read related literatures in it. I will talk some of them in the below.</p>
+<a id="more"></a>
+<h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><p>Augmenting data to a larger size is a very efficient way. Besides the regular geometric transformation, we can use models to learn transformation from original dataset or from other datasets which have similar (weak) labels.</p>
+<h2 id="From-same-dataset"><a href="#From-same-dataset" class="headerlink" title="From same dataset"></a>From same dataset</h2><h3 id="delta-encoder"><a href="#delta-encoder" class="headerlink" title="delta-encoder"></a>delta-encoder</h3><p>This paper proposes a variant of an Auto-Encoder network which tries to learn different transformation and applies them to generate new samples from new categories. Suppose there is a large dataset $D$ which has $C$ categories and enough training samples. Besides, there are several categories $C^(few)$ which only contain one or few samples. The delta-encoder try to input $X^a$ and $Y^a$, generating $Z$ with much smaller dimensions. The network try to regrad $Z$ as a tanformation instead of a feature containing the whole info of $X^a$. In decoder, $Z$ is again combined with $Y^a$ and tries to recover $X^a$. The pair samples are randomly sampled from the large dataset and finally become a set $set{Z}$.</p>
+<p>After training, for generating new samples for new categories, $Y^(new)$ is sampled and combined with sampled $Z$ from $set{Z}$ and finally becomde a new feature.</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/summary/" rel="tag"># summary</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/07/hardware-face-proof/" rel="next" title="硬件-人脸活体检测调研">
+                <i class="fa fa-chevron-left"></i> 硬件-人脸活体检测调研
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -267,6 +371,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -287,8 +395,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -357,6 +474,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-same-dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From same dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -504,6 +637,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
