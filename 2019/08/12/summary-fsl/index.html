@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-13T14:16:20.715Z">
+<meta property="og:updated_time" content="2019-08-14T01:49:25.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Survey on Few-Shot Learning">
 <meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
@@ -305,7 +305,12 @@
 <h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><p>Augmenting data to a larger size is a very efficient way. Besides the regular geometric transformation, we can use models to learn transformation from original dataset or from other datasets which have similar (weak) labels.</p>
 <h2 id="From-same-dataset"><a href="#From-same-dataset" class="headerlink" title="From same dataset"></a>From same dataset</h2><h3 id="delta-encoder"><a href="#delta-encoder" class="headerlink" title="delta-encoder"></a><a href="https://arxiv.org/abs/1806.04734" target="_blank" rel="noopener">delta-encoder</a></h3><p>This paper proposes a variant of an Auto-Encoder network which tries to learn different transformation and applies them to generate new samples from new categories. Suppose there is a large dataset $D$ which has $C$ categories and enough training samples. Besides, there are several categories $C^{few}$ which only contain one or few samples. The delta-encoder try to input $X^a$ and $Y^a$, generating $Z$ with much smaller dimensions. The network try to regrad $Z$ as a tanformation instead of a feature containing the whole info of $X^a$. In decoder, $Z$ is again combined with $Y^a$ and tries to recover $X^a$. The pair samples are randomly sampled from the large dataset and finally become a set $set\lbrace Z\rbrace$.</p>
 <p>After training, for generating new samples for new categories, $Y^{new}$ is sampled and combined with sampled $Z$ from $set\lbrace Z\rbrace$ and finally becomde a new feature.</p>
-<h3 id="Shrinking-and-Hallucinating-Features"><a href="#Shrinking-and-Hallucinating-Features" class="headerlink" title="Shrinking and Hallucinating Features"></a>Shrinking and Hallucinating Features</h3>
+<h3 id="Shrinking-and-Hallucinating-Features"><a href="#Shrinking-and-Hallucinating-Features" class="headerlink" title="Shrinking and Hallucinating Features"></a><a href="https://arxiv.org/abs/1606.02819" target="_blank" rel="noopener">Shrinking and Hallucinating Features</a></h3><p>The paper has three contributions.</p>
+<ol>
+<li>They create a benchmark for FSL. It contains a large dataset $D$ which has $C_{base}$ categories and enough samples. Besides, it also contains $C_{novel}$ categories and each category has only a few examples. All data are accessed from Imagenet. The process for solving the problem is <em>train feature representation in $C_{base}$</em>-&gt;<em>augment samples in $C_{novel}$</em>-&gt;<em>learn to distinguish $C_{base}\bigcup C_{novel}$</em>.</li>
+<li>They propose to create a network to learn the transfromation in different samples. <em>$X_1$-&gt;$X_2$:$Y_1$-&gt;$?$</em>. They first cluster 100 groups for each category in $C_{base}$. In training phase,<br>$$D(Group_a^A,Group_b^A,Group_a^B)-&gt;Group_b^B$$</li>
+</ol>
+
       
     </div>
     
