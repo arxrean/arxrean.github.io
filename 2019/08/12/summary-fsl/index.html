@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T08:25:10.582Z">
+<meta property="og:updated_time" content="2019-08-14T12:31:52.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Survey on Few-Shot Learning">
 <meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
@@ -303,7 +303,7 @@
         <p>This is a survey of few shot learning problem. Following the route of <a href="https://arxiv.org/abs/1904.05046" target="_blank" rel="noopener">Wang’s paper</a> and its structure, I read related literatures in it. I will talk some of them in the below.</p>
 <a id="more"></a>
 <h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><p>Augmenting data to a larger size is a very efficient way. Besides the regular geometric transformation, we can use models to learn transformation from original dataset or from other datasets which have similar (weak) labels.</p>
-<h2 id="From-same-dataset"><a href="#From-same-dataset" class="headerlink" title="From same dataset"></a>From same dataset</h2><h3 id="delta-encoder"><a href="#delta-encoder" class="headerlink" title="delta-encoder"></a><a href="https://arxiv.org/abs/1806.04734" target="_blank" rel="noopener">delta-encoder</a></h3><p>This paper proposes a variant of an Auto-Encoder network which tries to learn different transformation and applies them to generate new samples from new categories. Suppose there is a large dataset $D$ which has $C$ categories and enough training samples. Besides, there are several categories $C^{few}$ which only contain one or few samples. The delta-encoder try to input $X^a$ and $Y^a$, generating $Z$ with much smaller dimensions. The network try to regrad $Z$ as a tanformation instead of a feature containing the whole info of $X^a$. In decoder, $Z$ is again combined with $Y^a$ and tries to recover $X^a$. The pair samples are randomly sampled from the large dataset and finally become a set $set\lbrace Z\rbrace$.</p>
+<h2 id="From-Same-Dataset"><a href="#From-Same-Dataset" class="headerlink" title="From Same Dataset"></a>From Same Dataset</h2><h3 id="delta-encoder"><a href="#delta-encoder" class="headerlink" title="delta-encoder"></a><a href="https://arxiv.org/abs/1806.04734" target="_blank" rel="noopener">delta-encoder</a></h3><p>This paper proposes a variant of an Auto-Encoder network which tries to learn different transformation and applies them to generate new samples from new categories. Suppose there is a large dataset $D$ which has $C$ categories and enough training samples. Besides, there are several categories $C^{few}$ which only contain one or few samples. The delta-encoder try to input $X^a$ and $Y^a$, generating $Z$ with much smaller dimensions. The network try to regrad $Z$ as a tanformation instead of a feature containing the whole info of $X^a$. In decoder, $Z$ is again combined with $Y^a$ and tries to recover $X^a$. The pair samples are randomly sampled from the large dataset and finally become a set $set\lbrace Z\rbrace$.</p>
 <p>After training, for generating new samples for new categories, $Y^{new}$ is sampled and combined with sampled $Z$ from $set\lbrace Z\rbrace$ and finally becomde a new feature.</p>
 <h3 id="Shrinking-and-Hallucinating-Features"><a href="#Shrinking-and-Hallucinating-Features" class="headerlink" title="Shrinking and Hallucinating Features"></a><a href="https://arxiv.org/abs/1606.02819" target="_blank" rel="noopener">Shrinking and Hallucinating Features</a></h3><p>The paper has three contributions.</p>
 <ol>
@@ -320,6 +320,7 @@
 </li>
 </ol>
 <p>These methods try to generate more samples for each category to draw their joint distribution. However, they assume the transformation is general over all categories. This is not reasonable for some categories. For example, birds on the ground and birds on the tree can generate one transformation, but this transformation is not suitable for cars.</p>
+<h2 id="From-Other-Dataset"><a href="#From-Other-Dataset" class="headerlink" title="From Other Dataset"></a>From Other Dataset</h2><p>There are also some works trying to borrow samples from other datasets which may have samples with same labels.</p>
 
       
     </div>
@@ -499,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-same-dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From same dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Same-Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From Same Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Other-Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">From Other Dataset</span></a></li></ol></li></ol></div>
             
 
           </div>
