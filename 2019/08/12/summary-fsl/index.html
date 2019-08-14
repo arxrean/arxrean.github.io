@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T12:31:52.792Z">
+<meta property="og:updated_time" content="2019-08-14T15:08:00.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Survey on Few-Shot Learning">
 <meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
@@ -321,6 +321,12 @@
 </ol>
 <p>These methods try to generate more samples for each category to draw their joint distribution. However, they assume the transformation is general over all categories. This is not reasonable for some categories. For example, birds on the ground and birds on the tree can generate one transformation, but this transformation is not suitable for cars.</p>
 <h2 id="From-Other-Dataset"><a href="#From-Other-Dataset" class="headerlink" title="From Other Dataset"></a>From Other Dataset</h2><p>There are also some works trying to borrow samples from other datasets which may have samples with same labels.</p>
+<h3 id="large-scale-diffusion"><a href="#large-scale-diffusion" class="headerlink" title="large-scale diffusion"></a><a href="https://arxiv.org/abs/1706.02332" target="_blank" rel="noopener">large-scale diffusion</a></h3><p>This paper tries to support label propagation in a semi-supervised way. Based on few annotated samples and a large set of unlabeled images, they want to propagate corresponing labels.<br>The standard way of label propagation is:</p>
+<ol>
+<li>Convert images to features based on trained CNN network.</li>
+<li>Build kNN graph representing the $N\times N$ sparse similarity matrix, denoted by $W$.</li>
+<li>Build initial label matrix in which gt-labeled images have one-hot encoding while unlabeled ones are all $0$. Then the known labels are diffused by<br>$$<br>L_{t+1}=WL_t<br>$$<br>Note that  we can reset gt-labels to one-hot encoding during iterations.</li>
+</ol>
 
       
     </div>
@@ -500,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Same-Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From Same Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Other-Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">From Other Dataset</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Same-Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From Same Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Other-Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">From Other Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#large-scale-diffusion"><span class="nav-number">1.2.1.</span> <span class="nav-text">large-scale diffusion</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
