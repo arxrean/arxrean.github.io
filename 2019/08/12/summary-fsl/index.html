@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T07:58:49.896Z">
+<meta property="og:updated_time" content="2019-08-14T08:01:45.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Survey on Few-Shot Learning">
 <meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
@@ -314,9 +314,9 @@
 </ol>
 <ol start="3">
 <li><p>For better representation in low-shot learning, they propose a new loss function to regulate the training.</p>
-<p>We know in classical training problem, we want to minimize<br>$$<br>\mathop{min}\limits_{W,\Phi} L_D(\Phi,W)=\mathop{min}\limits_{W,\Phi}\frac{1}{|D|}\sum_{(x,y)\in D}L_{cls}(W,\Phi (x),y)<br>$$<br>Then each value in final feature can be the probability for the target category<br>$$<br>p_k(W,x)=\frac{exp(w_k^T)}{\sum_j exp(w_j^T x)}<br>$$<br>In this paper, they regard several tiny sets $S \subset D$(could be one batch) as low-shot dataset. Then they want a classifer $V$ to minimize<br>$$<br>\mathop{min}\limits_{V} L_S(\Phi,V)=\mathop{min}\limits_{V}\frac{1}{|S|}\sum_{(x,y)\in S}L_{cls}(V,\Phi (x),y)<br>$$<br>Therefore, we want $V$ to match $W$, which means we need $W$ to minimize $L_S(\Phi,V)$. So we want $\triangledown_V L_S(\Phi,V)\mid_{v=w}=0$. Thus we want to minimize<br>$$<br>\LHat_S(\Phi,W)=\parallel\triangledown_V L_S(\Phi,V)\mid_{v=w}\parallel^2<br>$$<br>$\triangledown_V L_S(\Phi,V)$ can be denoted as<br>$$<br>\triangledown_V L_S(\Phi,V)=[g_1(S,V),…g_K(S,V)]<br>$$</p>
+<p>We know in classical training problem, we want to minimize<br>$$<br>\mathop{min}\limits_{W,\Phi} L_D(\Phi,W)=\mathop{min}\limits_{W,\Phi}\frac{1}{|D|}\sum_{(x,y)\in D}L_{cls}(W,\Phi (x),y)<br>$$<br>Then each value in final feature can be the probability for the target category<br>$$<br>p_k(W,x)=\frac{exp(w_k^T)}{\sum_j exp(w_j^T x)}<br>$$<br>In this paper, they regard several tiny sets $S \subset D$(could be one batch) as low-shot dataset. Then they want a classifer $V$ to minimize<br>$$<br>\mathop{min}\limits_{V} L_S(\Phi,V)=\mathop{min}\limits_{V}\frac{1}{|S|}\sum_{(x,y)\in S}L_{cls}(V,\Phi (x),y)<br>$$<br>Therefore, we want $V$ to match $W$, which means we need $W$ to minimize $L_S(\Phi,V)$. So we want $\triangledown_V L_S(\Phi,V)\mid_{v=w}=0$. Thus we want to minimize<br>$$<br>LHat_S(\Phi,W)=\parallel\triangledown_V L_S(\Phi,V)\mid_{v=w}\parallel^2<br>$$<br>$\triangledown_V L_S(\Phi,V)$ can be denoted as<br>$$<br>\triangledown_V L_S(\Phi,V)=[g_1(S,V),…g_K(S,V)]<br>$$</p>
 <p>$$<br>g_k(S,V)=\frac{1}{|S|}\sum_{(x,y)\in S}(p_k(V,\Phi(x))-\delta_{yk})\Phi(x)<br>$$</p>
-<p>where $\delta_{yk}$ is 1 when $y=k$. If $S$ contains only one sample, then<br>$$<br>\hat{L}<em>S(\Phi,W)=\alpha (W,\Phi(x),y)\parallel\Phi(x)\parallel^2<br>$$<br>If we average over all samples, then<br>$$<br>L_D^{SGM}(\Phi,W)=\frac{1}{|D|}\hat{L}_S(\Phi,W)<br>$$<br>We add this to the original loss<br>$$<br>\mathop{min}\limits</em>{W,\Phi} L_D(\Phi,W)+\lambda L_D^{SGM}(\Phi,W)<br>$$</p>
+<p>where $\delta_{yk}$ is 1 when $y=k$. If $S$ contains only one sample, then<br>$$<br>LHat_S(\Phi,W)=\alpha (W,\Phi(x),y)\parallel\Phi(x)\parallel^2<br>$$<br>If we average over all samples, then<br>$$<br>L_D^{SGM}(\Phi,W)=\frac{1}{|D|}LHat_S(\Phi,W)<br>$$<br>We add this to the original loss<br>$$<br>\mathop{min}\limits_{W,\Phi} L_D(\Phi,W)+\lambda L_D^{SGM}(\Phi,W)<br>$$</p>
 </li>
 </ol>
 
