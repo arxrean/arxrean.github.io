@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T15:39:11.728Z">
+<meta property="og:updated_time" content="2019-08-14T15:42:18.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Survey on Few-Shot Learning">
 <meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
@@ -325,7 +325,10 @@
 <ol>
 <li>Convert images to features based on trained CNN network.</li>
 <li>Build kNN graph representing the $N\times N$ sparse similarity matrix, denoted by $W$.</li>
-<li>Build initial label matrix in which gt-labeled images have one-hot encoding while unlabeled ones are all $0$. Then the known labels are diffused by<br>$$<br>L_{t+1}=WL_t<br>$$<br>Note that each row in $L$ corresponds to one sample and we can reset gt-labels to one-hot encoding during iterations.<br>Then the authors make some variations. These aitional operations can be denoted as<br>$$<br>L_{t+1}=\eta(WL_t)<br>$$<br>$\eta$ can be different as</li>
+<li>Build initial label matrix in which gt-labeled images have one-hot encoding while unlabeled ones are all $0$. Then the known labels are diffused by<br>$$<br>L_{t+1}=WL_t<br>$$<br>Note that each row in $L$ corresponds to one sample and we can reset gt-labels to one-hot encoding during iterations.</li>
+</ol>
+<p>Then the authors make some variations. These aitional operations can be denoted as<br>$$<br>L_{t+1}=\eta(WL_t)<br>$$<br>$\eta$ can be different as</p>
+<ol>
 <li>a function that $l_1$-normalize each row to provide distribution over labels.</li>
 <li>a function that $l_1$-normalize each column if we assume unlabled images have a uniform distribution on labels.</li>
 <li>a merged way with above(not understand now).</li>
