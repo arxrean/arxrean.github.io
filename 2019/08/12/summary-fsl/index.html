@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AIEEEr">
 <meta property="og:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T15:42:18.830Z">
+<meta property="og:updated_time" content="2019-08-19T14:00:53.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Survey on Few-Shot Learning">
 <meta name="twitter:description" content="This is a survey of few shot learning problem. Following the route of Wang’s paper and its structure, I read related literatures in it. I will talk some of them in the below.">
@@ -334,6 +334,31 @@
 <li>a merged way with above(not understand now).</li>
 <li>the Markov Clustering denoted as<br>$$<br>L_{t+1}=\tau_r(\eta(WL_t))<br>$$</li>
 </ol>
+<h3 id="Fusing-Side-information"><a href="#Fusing-Side-information" class="headerlink" title="Fusing Side information"></a><a href="https://arxiv.org/abs/1710.08347" target="_blank" rel="noopener">Fusing Side information</a></h3><p>This paper proposes to convert ‘large-example’ classes to ‘few-example’ classes by using a similarity matrix.</p>
+<p>Firstly there are four definitions,</p>
+<table>
+<thead>
+<tr>
+<th>$S$</th>
+<th>${x_i,y_i}_{i=1}^N$ with $C$ classes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$R$</td>
+<td>${R^1,R^2,…,R^M}$</td>
+</tr>
+<tr>
+<td>$S’$</td>
+<td>${x_i^{‘},y_i^{‘}}_{i=1}^N$ with $C’$ classes</td>
+</tr>
+<tr>
+<td>$R’$</td>
+<td>${R^{‘1},R^{‘2},…,R^{‘M}}$</td>
+</tr>
+</tbody></table>
+<p>The goal is to learn the non-linear mapping ${X,X’}$ that aligns with ${R,R’}$.</p>
+<p>They use HSIC as statistical dependency on the learned embeddings and labels. denoted as<br>$$<br>HSIC(S,R)=\frac{1}{(N-1)^2}tr(HK_GHK_R)<br>$$<br>where $K_{G_{ij}}=k_g(x_i,x_j)$, $K_{R_{ij}}=k_r(y_i,y_j)$. The former is inner product of two embeddings while the later is the combination of each $R^m$ denoted as<br>$$<br>k_r(y_i,y_j)=\sum_{m=1}^M\frac{1}{M}k_{r^m}(y_i,y_j)<br>$$<br>And we are trying to maximize HSIC to get the best representation of the relationship in labels. Finally we can incorporate different set as $HSIC({S,S’},{R,R’})$.</p>
+<p>Besides, they propose an attention kernel to convert ‘large-examples’ classes to ‘one-shot’ classes by<br>$$<br>y=\sum_{i\in S’}a_r(y,y_i^{‘})y_i^{‘}<br>$$<br>These new generated samples can be additional training set.</p>
 
       
     </div>
@@ -513,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Same-Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From Same Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Other-Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">From Other Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#large-scale-diffusion"><span class="nav-number">1.2.1.</span> <span class="nav-text">large-scale diffusion</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data"><span class="nav-number">1.</span> <span class="nav-text">Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Same-Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">From Same Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delta-encoder"><span class="nav-number">1.1.1.</span> <span class="nav-text">delta-encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinking-and-Hallucinating-Features"><span class="nav-number">1.1.2.</span> <span class="nav-text">Shrinking and Hallucinating Features</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#From-Other-Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">From Other Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#large-scale-diffusion"><span class="nav-number">1.2.1.</span> <span class="nav-text">large-scale diffusion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fusing-Side-information"><span class="nav-number">1.2.2.</span> <span class="nav-text">Fusing Side information</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
