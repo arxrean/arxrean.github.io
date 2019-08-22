@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="summary,">
+  <meta name="keywords" content="try,">
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="相机类别目前用于人脸活体检测的摄像头主要有单目摄像头,近红外摄像头,双目摄像头和3D摄像头.">
-<meta name="keywords" content="summary">
+<meta name="description" content="There have been several datasets for star face recognition such as IMDB and MS Celeb.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cove">
+<meta name="keywords" content="try">
 <meta property="og:type" content="article">
-<meta property="og:title" content="硬件-人脸活体检测调研">
-<meta property="og:url" content="https://arxrean.github.io/2019/08/07/hardware-face-proof/index.html">
+<meta property="og:title" content="star-dataset">
+<meta property="og:url" content="https://arxrean.github.io/2019/08/21/star-dataset/index.html">
 <meta property="og:site_name" content="AIEEEr">
-<meta property="og:description" content="相机类别目前用于人脸活体检测的摄像头主要有单目摄像头,近红外摄像头,双目摄像头和3D摄像头.">
+<meta property="og:description" content="There have been several datasets for star face recognition such as IMDB and MS Celeb.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cove">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-07T01:59:33.184Z">
+<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png">
+<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566440487/blog/star-dataset/original_dataset_hist_txhfim.png">
+<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566457293/blog/star-dataset/face_dataset_hist_mollje.png">
+<meta property="og:updated_time" content="2019-08-22T07:47:59.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="硬件-人脸活体检测调研">
-<meta name="twitter:description" content="相机类别目前用于人脸活体检测的摄像头主要有单目摄像头,近红外摄像头,双目摄像头和3D摄像头.">
+<meta name="twitter:title" content="star-dataset">
+<meta name="twitter:description" content="There have been several datasets for star face recognition such as IMDB and MS Celeb.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cove">
+<meta name="twitter:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://arxrean.github.io/2019/08/07/hardware-face-proof/">
+  <link rel="canonical" href="https://arxrean.github.io/2019/08/21/star-dataset/">
 
 
 
 
 
-  <title>硬件-人脸活体检测调研 | AIEEEr</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>star-dataset | AIEEEr</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://arxrean.github.io/2019/08/07/hardware-face-proof/">
+    <link itemprop="mainEntityOfPage" href="https://arxrean.github.io/2019/08/21/star-dataset/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ziyi Kou">
@@ -250,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">硬件-人脸活体检测调研</h1>
+          <h1 class="post-title" itemprop="name headline">star-dataset</h1>
         
 
         <div class="post-meta">
@@ -262,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T01:07:12+00:00">
-                2019-08-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T02:43:35+00:00">
+                2019-08-21
               </time>
             
 
@@ -300,15 +304,95 @@
       
 
       
-        <h1 id="相机类别"><a href="#相机类别" class="headerlink" title="相机类别"></a>相机类别</h1><p>目前用于人脸活体检测的摄像头主要有单目摄像头,近红外摄像头,双目摄像头和3D摄像头.</p>
-<a id="more"></a>
-<h3 id="单目摄像头"><a href="#单目摄像头" class="headerlink" title="单目摄像头"></a>单目摄像头</h3><p>即普通的RGB摄像头,通过分析采集到人像的破绽如：摩尔纹、成像畸形、图像里面漏出的各种类型的边框、图像质量、反射率等，并结合分析全局特征和局部微纹理信息有效过滤假体.<br>优点:成本较低.<br>缺点:需要更精密的算法.识别效果波动性大.<br>价格:根据镜头的CMOS大小不同,约50-200元.<br>参考设备:<a href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.690a36c9UZ3wPv&id=584456003596&ns=1&abbucket=9#detail" target="_blank" rel="noopener">设备1</a>, <a href="https://item.taobao.com/item.htm?spm=a230r.1.14.122.690a36c9UZ3wPv&id=565707836904&ns=1&abbucket=9#detail" target="_blank" rel="noopener">设备2</a></p>
-<h3 id="近红外摄像头"><a href="#近红外摄像头" class="headerlink" title="近红外摄像头"></a>近红外摄像头</h3><p>其基于红外成像原理，屏幕类无法成像，可以有效过滤屏幕类攻击. 而纸张类攻击可针对生成图像的纹理，颜色等特征进行检测识别。<br>优点:对于屏幕类攻击效果非常好<br>缺点:红外成像从肉眼看其实近乎于黑白照片,对于需要使用RGB照片的场景不适用<br>价格:根据摄像头内灯数等因素不同,约80-400元<br>参考设备:<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.30.1c341baarhwCXG&id=14111413288&ns=1&abbucket=9" target="_blank" rel="noopener">设备1</a>,<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.23.1c341baarhwCXG&id=547521806213&ns=1&abbucket=9" target="_blank" rel="noopener">设备2</a>,<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.44.1c341baarhwCXG&id=593979624362&ns=1&abbucket=9" target="_blank" rel="noopener">设备3</a></p>
-<h3 id="双目摄像头-单目-近红外"><a href="#双目摄像头-单目-近红外" class="headerlink" title="双目摄像头(单目+近红外)"></a>双目摄像头(单目+近红外)</h3><p>综合了上述两种摄像头,可以同时生成RGB图片和红外图片.<br>优点:同时生成两种不同的图片,检测可更精准<br>缺点:暂无<br>价格:400-900<br>参考设备:<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.16.540032faZzTZI5&id=591035044853&ns=1&abbucket=9" target="_blank" rel="noopener">设备1</a>,<a href="https://item.taobao.com/item.htm?spm=a230r.1.14.46.b7cc15bfmLIJt5&id=589183134505&ns=1&abbucket=9#detail" target="_blank" rel="noopener">设备2</a>,<a href="https://click.simba.taobao.com/cc_im?spm=a230r.1.0.0&p=%BA%EC%CD%E2%CB%AB%C4%BF&s=1380567633&k=665&e=4qpBHF3pcNRurDG4PuX5OYyHA0NiPBm4Cb8LW%2BlGrxRPsKZJL1Xq83rfMW8bSVeLMZZS1priJdBtP3aHB0T3SPfsDGdL3UKntyyeG41usP6by9njfae4JEwshI%2BiZnCbTbU%2B0howz22G0C4tqxCxJMCuuNYrmD9AkfT3nMuqc3CK7CycMfv%2FR8WuENUm0%2FDszZnC2KKePbzbryOE%2BKBNB%2BEORb3ZEV4wtdsnS3dvI0yX00BLiPKqp%2BDoPhDmXwNuXggrkaA9hKDtDGSxGpHug60gal8h42tCwQXP%2B5gyqcIozSQC3uy8RZq94DFbPnEa8GONN8UU6SWAOeVral6OrPwVtj2v7A%2FLS%2BvDmuFB2GBLAGcUpLEytRWiY%2BdrNq%2FyyO%2Fr0icTNiE%2Be%2F61Fy8PdFztzl7%2F62sCC5I%2Bh78rl64k4kNA%2BjqZJD6RZ4MrZCeUyE5fjXHFLeS43Bj52MqF19V5%2FnR%2Bfr9MlwUG7JqSEmAkhHKWXejm3LDx91%2F3YqkDtUOEJ5O8tayogZPvKq6PoD57%2FrUXLw908I3FNBe3GjGAOeVral6OrPwVtj2v7A%2FL2ZUVUIwruvSw9sKfBC2h8Kxg2G06rXXIG6KSPiHADuNEcIF1XTkjkNSr27qjg7NsSOhHIwwUAJSXtZWD%2BE4vSg%3D%3D" target="_blank" rel="noopener">设备3</a>,<a href="https://click.simba.taobao.com/cc_im?spm=a230r.1.0.0&p=%BA%EC%CD%E2%CB%AB%C4%BF&s=1380567633&k=633&e=6bo1WfDAG7JurDG4PuX5OYyHA0NiPBm4Cb8LW%2BlGrxRPsKZJL1Xq83rfMW8bSVeLMZZS1priJdBtP3aHB0T3SJoEmTwPKz3HtyyeG41usP6by9njfae4JEwshI%2BiZnCbTbU%2B0howz22G0C4tqxCxJMCuuNYrmD9AkfT3nMuqc3CK7CycMfv%2FR8WuENUm0%2FDszZnC2KKePbzbryOE%2BKBNB%2BEORb3ZEV4wtdsnS3dvI0yX00BLiPKqp%2BDoPhDmXwNuXggrkaA9hKDtDGSxGpHug60gal8h42tCwQXP%2B5gyqcIozSQC3uy8RQ4KsMDAToVsS%2BvDmuFB2GA7K5GqsTc0uoR1u69g0IIIQKYNv35OFN7iSY10AEM9LaU58PPgKAYE9M0xt6X2CXEE485njsB1ppIvxrEpljypm8ZNisSJagcIY5j18X61wdsTRL%2BzxrFOgmokmiLCqZlsxayrmtHV4PNC%2FMxFAPbq7NxrrdG9rzKcwyxQIyqkR%2FgHVR7qEOLGBIHKjp%2BfwoT0zTG3pfYJcRmcBlN1mULrR9hiereb4AsFJkDMk4Hr%2BH1bLBtK2NT1cXZUYt4oEOFoQWfNBf%2Bi6dSr27qjg7NsSOhHIwwUAJSXtZWD%2BE4vSg%3D%3D" target="_blank" rel="noopener">设备4</a></p>
-<h3 id="3D摄像头"><a href="#3D摄像头" class="headerlink" title="3D摄像头"></a>3D摄像头</h3><p>3D摄像头可自动检测人脸的深度信息,无需像双目摄像头中自己去估计,精度更高.<br>优点:可进行更精准的识别,在黑夜等场景中有优势.<br>缺点:部分设备成本较高<br>价格:800-2000<br>参考设备:<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.23.4f101716NgIl10&id=581766178950&ns=1&abbucket=9" target="_blank" rel="noopener">设备1</a>,<a href="https://item.taobao.com/item.htm?spm=a230r.1.14.30.4f101716NgIl10&id=584463514709&ns=1&abbucket=9#detail" target="_blank" rel="noopener">设备2</a>,<a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.16.4f101716NgIl10&id=557833086451&ns=1&abbucket=9" target="_blank" rel="noopener">设备3</a></p>
-<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>根据应用场景的不同,相机的选择也会不同</p>
-<h3 id="本地检测-本地识别"><a href="#本地检测-本地识别" class="headerlink" title="本地检测 本地识别"></a>本地检测 本地识别</h3><p>如手机的解锁,支付等.一般为1:1的人脸认证.人脸的注册照一般存于手机内部.由于手机等有可能用于黑夜等场景,因此对摄像头的光照鲁棒性要求较高.其最佳方案一般是3D摄像头捕捉场景中红外+3D人脸(可有效阻挡头套,面具等攻击),然后使用红外照片进行人脸注册和识别.</p>
-<h3 id="本地检测-云端识别"><a href="#本地检测-云端识别" class="headerlink" title="本地检测 云端识别"></a>本地检测 云端识别</h3><p>这种情况下,人脸注册照存于云端,其一般是RGB彩色照(例如身份证照片,证件照照片等).所以本地采集到的图片需要是RGB的.因此一般采用双目摄像头进行人脸的检测,然后传到云端去识别.</p>
+        <p>There have been several datasets for star face recognition such as IMDB and <a href="https://www.msceleb.org/" target="_blank" rel="noopener">MS Celeb</a>.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cover all living and movie styles. Therefore, I create a star dataset in which part of stars have dozens of images while the others have just one image for each.  Most stars are well known as least in 2019 year..I will record the process of creating it in the following. All codes are available in my Github.</p>
+<h1 id="Data-Crawl"><a href="#Data-Crawl" class="headerlink" title="Data Crawl"></a>Data Crawl</h1><p>I firstly crawled star information and their images from <a href="http://www.happyjuzi.com/" target="_blank" rel="noopener">happyjuzi.com</a> website and many other small websites.</p>
+<h2 id="Star-Info"><a href="#Star-Info" class="headerlink" title="Star Info"></a>Star Info</h2><p>I crawled each star based on their unique url id and obtained several properties that may help in the future model training, as denoted in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>the unique id for each star</td>
+</tr>
+<tr>
+<td>name</td>
+<td>the original name that may be Chinese</td>
+</tr>
+<tr>
+<td>e_name</td>
+<td>English name if they have</td>
+</tr>
+<tr>
+<td>star_type</td>
+<td>actor/(Internet) celebrity/others</td>
+</tr>
+<tr>
+<td>star_other</td>
+<td>other info like their sign</td>
+</tr>
+<tr>
+<td>area</td>
+<td>country they are from</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>a few sentences to describe them</td>
+</tr>
+<tr>
+<td>reels</td>
+<td>their works</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>1 for male while 0 for female</td>
+</tr>
+</tbody></table>
+<h2 id="Star-Images"><a href="#Star-Images" class="headerlink" title="Star Images"></a>Star Images</h2><p>The images consists of two parts. The first part is obtained from image repository of each star while the second part is from their profile pictures, which is denoted in the following image.</p>
+<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png" alt="alt text" title="Figure_1"></p>
+<p>The key images are much more likely to be true images for corresponding stars compared with other images, since many noisy or even unrelated images will be uploaded by users.  The following table illustrates basic info for my original dataset.</p>
+<table>
+<thead>
+<tr>
+<th>Star</th>
+<th>Images</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>13715</td>
+<td>224438</td>
+<td>13322</td>
+</tr>
+</tbody></table>
+<p>We can see most stars have their key images. The distribution of the number of images per each star is shown in the following figure.</p>
+<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566440487/blog/star-dataset/original_dataset_hist_txhfim.png" alt="alt text" title="Figure_1"></p>
+<h1 id="Data-Preprocess"><a href="#Data-Preprocess" class="headerlink" title="Data Preprocess"></a>Data Preprocess</h1><p>Since a large part of scrawled data are just unrelated images with targeted stars, we need to preprocess data in several steps.</p>
+<h2 id="Remove-similar-Images"><a href="#Remove-similar-Images" class="headerlink" title="Remove similar Images"></a>Remove similar Images</h2><p>Different fans for one star may upload a same image. I use pHash to hash each image per star and compare each two image hashes, calculating their euclidean distance. If their similarity is higher than the predefined threshold, I will mark one of them as the duplicate and remove it.</p>
+<h2 id="Remove-group-stars"><a href="#Remove-group-stars" class="headerlink" title="Remove group stars"></a>Remove group stars</h2><p>There are some groups which consists of several or many stars. But since each single star will be also recorded in many website, these group labels will influence the training. So I just remove these group stars. </p>
+<p>I use pretrained MTCNN model to extract faces in Key Images. Since these images always only contain the single star face if the star is not a group. I set the threshold for MTCNN very high and remove the star if the model detect more than one face.</p>
+<h2 id="Extract-Faces"><a href="#Extract-Faces" class="headerlink" title="Extract Faces"></a>Extract Faces</h2><p>I extract faces in each image, if there are more than two faces in one image, I just remove it. If there are two faces, I check it and choose the right one. The face is $112\times 112$  gray and aligned by landmarks.</p>
+<h2 id="Remove-Similar-or-Unrelated-Faces"><a href="#Remove-Similar-or-Unrelated-Faces" class="headerlink" title="Remove Similar or Unrelated  Faces"></a>Remove Similar or Unrelated  Faces</h2><p>For each star, there may exist same face image or other faces which are not the targeted star.</p>
+<p>I first use pretrained lightCNN to extract 256-d features for each face. Then I use both euclidean distance and cosine similarity to calculate the distance between two faces. If the value is higher than $thd1$ or lower than $thd2$, I remove one of the raw face image. Please note the dataset is very sensitive to $thd1$ and $thd2$. Therefore I need to make action only if there is a very high confidence.</p>
+<p>Then I finetuned a gender classification model based on crawled data. The model check each raw face. If a face image is recognized as wrong gender with high score, I just remove it. </p>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>The following table is the distribution of all stars.</p>
+<table>
+<thead>
+<tr>
+<th>Total Images</th>
+<th>Total stars</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>80062</td>
+<td>9233</td>
+</tr>
+</tbody></table>
+<p>And the number of images per star is in the following figure:</p>
+<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566457293/blog/star-dataset/face_dataset_hist_mollje.png" alt="alt text" title="Figure_1"></p>
 
       
     </div>
@@ -326,7 +410,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/summary/" rel="tag"># summary</a>
+            <a href="/tags/try/" rel="tag"># try</a>
           
         </div>
       
@@ -339,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/03/face-proof-summary/" rel="next" title="人脸活体检测综述">
-                <i class="fa fa-chevron-left"></i> 人脸活体检测综述
+              <a href="/2019/08/12/summary-fsl/" rel="next" title="A Survey on Few-Shot Learning">
+                <i class="fa fa-chevron-left"></i> A Survey on Few-Shot Learning
               </a>
             
           </div>
@@ -348,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/12/summary-fsl/" rel="prev" title="A Survey on Few-Shot Learning">
-                A Survey on Few-Shot Learning <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -492,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相机类别"><span class="nav-number">1.</span> <span class="nav-text">相机类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单目摄像头"><span class="nav-number">1.0.1.</span> <span class="nav-text">单目摄像头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近红外摄像头"><span class="nav-number">1.0.2.</span> <span class="nav-text">近红外摄像头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双目摄像头-单目-近红外"><span class="nav-number">1.0.3.</span> <span class="nav-text">双目摄像头(单目+近红外)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D摄像头"><span class="nav-number">1.0.4.</span> <span class="nav-text">3D摄像头</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地检测-本地识别"><span class="nav-number">2.0.1.</span> <span class="nav-text">本地检测 本地识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地检测-云端识别"><span class="nav-number">2.0.2.</span> <span class="nav-text">本地检测 云端识别</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Crawl"><span class="nav-number">1.</span> <span class="nav-text">Data Crawl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Star-Info"><span class="nav-number">1.1.</span> <span class="nav-text">Star Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Star-Images"><span class="nav-number">1.2.</span> <span class="nav-text">Star Images</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Preprocess"><span class="nav-number">2.</span> <span class="nav-text">Data Preprocess</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-similar-Images"><span class="nav-number">2.1.</span> <span class="nav-text">Remove similar Images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-group-stars"><span class="nav-number">2.2.</span> <span class="nav-text">Remove group stars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extract-Faces"><span class="nav-number">2.3.</span> <span class="nav-text">Extract Faces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Similar-or-Unrelated-Faces"><span class="nav-number">2.4.</span> <span class="nav-text">Remove Similar or Unrelated  Faces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">2.5.</span> <span class="nav-text">Result</span></a></li></ol></li></ol></div>
             
 
           </div>
