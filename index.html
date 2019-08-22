@@ -299,98 +299,14 @@
 
       
         
-          
-            <p>There have been several datasets for star face recognition such as IMDB and <a href="https://www.msceleb.org/" target="_blank" rel="noopener">MS Celeb</a>.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cover all living and movie styles. Therefore, I create a star dataset in which part of stars have dozens of images while the others have just one image for each.  Most stars are well known as least in 2019 year..I will record the process of creating it in the following. All codes are available in my Github.</p>
-<h1 id="Data-Crawl"><a href="#Data-Crawl" class="headerlink" title="Data Crawl"></a>Data Crawl</h1><p>I firstly crawled star information and their images from <a href="http://www.happyjuzi.com/" target="_blank" rel="noopener">happyjuzi.com</a> website and many other small websites.</p>
-<h2 id="Star-Info"><a href="#Star-Info" class="headerlink" title="Star Info"></a>Star Info</h2><p>I crawled each star based on their unique url id and obtained several properties that may help in the future model training, as denoted in the following table.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>id</td>
-<td>the unique id for each star</td>
-</tr>
-<tr>
-<td>name</td>
-<td>the original name that may be Chinese</td>
-</tr>
-<tr>
-<td>e_name</td>
-<td>English name if they have</td>
-</tr>
-<tr>
-<td>star_type</td>
-<td>actor/(Internet) celebrity/others</td>
-</tr>
-<tr>
-<td>star_other</td>
-<td>other info like their sign</td>
-</tr>
-<tr>
-<td>area</td>
-<td>country they are from</td>
-</tr>
-<tr>
-<td>desc</td>
-<td>a few sentences to describe them</td>
-</tr>
-<tr>
-<td>reels</td>
-<td>their works</td>
-</tr>
-<tr>
-<td>gender</td>
-<td>1 for male while 0 for female</td>
-</tr>
-</tbody></table>
-<h2 id="Star-Images"><a href="#Star-Images" class="headerlink" title="Star Images"></a>Star Images</h2><p>The images consists of two parts. The first part is obtained from image repository of each star while the second part is from their profile pictures, which is denoted in the following image.</p>
-<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png" alt="alt text" title="Figure_1"></p>
-<p>The key images are much more likely to be true images for corresponding stars compared with other images, since many noisy or even unrelated images will be uploaded by users.  The following table illustrates basic info for my original dataset.</p>
-<table>
-<thead>
-<tr>
-<th>Star</th>
-<th>Images</th>
-<th>Key</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>13715</td>
-<td>224438</td>
-<td>13322</td>
-</tr>
-</tbody></table>
-<p>We can see most stars have their key images. The distribution of the number of images per each star is shown in the following figure.</p>
-<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566440487/blog/star-dataset/original_dataset_hist_txhfim.png" alt="alt text" title="Figure_1"></p>
-<h1 id="Data-Preprocess"><a href="#Data-Preprocess" class="headerlink" title="Data Preprocess"></a>Data Preprocess</h1><p>Since a large part of scrawled data are just unrelated images with targeted stars, we need to preprocess data in several steps.</p>
-<h2 id="Remove-similar-Images"><a href="#Remove-similar-Images" class="headerlink" title="Remove similar Images"></a>Remove similar Images</h2><p>Different fans for one star may upload a same image. I use pHash to hash each image per star and compare each two image hashes, calculating their euclidean distance. If their similarity is higher than the predefined threshold, I will mark one of them as the duplicate and remove it.</p>
-<h2 id="Remove-group-stars"><a href="#Remove-group-stars" class="headerlink" title="Remove group stars"></a>Remove group stars</h2><p>There are some groups which consists of several or many stars. But since each single star will be also recorded in many website, these group labels will influence the training. So I just remove these group stars. </p>
-<p>I use pretrained MTCNN model to extract faces in Key Images. Since these images always only contain the single star face if the star is not a group. I set the threshold for MTCNN very high and remove the star if the model detect more than one face.</p>
-<h2 id="Extract-Faces"><a href="#Extract-Faces" class="headerlink" title="Extract Faces"></a>Extract Faces</h2><p>I extract faces in each image, if there are more than two faces in one image, I just remove it. If there are two faces, I check it and choose the right one. The face is $112\times 112$  gray and aligned by landmarks.</p>
-<h2 id="Remove-Similar-or-Unrelated-Faces"><a href="#Remove-Similar-or-Unrelated-Faces" class="headerlink" title="Remove Similar or Unrelated  Faces"></a>Remove Similar or Unrelated  Faces</h2><p>For each star, there may exist same face image or other faces which are not the targeted star.</p>
-<p>I first use pretrained lightCNN to extract 256-d features for each face. Then I use both euclidean distance and cosine similarity to calculate the distance between two faces. If the value is higher than $thd1$ or lower than $thd2$, I remove one of the raw face image. Please note the dataset is very sensitive to $thd1$ and $thd2$. Therefore I need to make action only if there is a very high confidence.</p>
-<p>Then I finetuned a gender classification model based on crawled data. The model check each raw face. If a face image is recognized as wrong gender with high score, I just remove it. </p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>The following table is the distribution of all stars.</p>
-<table>
-<thead>
-<tr>
-<th>Total Images</th>
-<th>Total stars</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>80062</td>
-<td>9233</td>
-</tr>
-</tbody></table>
-<p>And the number of images per star is in the following figure:</p>
-<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566457293/blog/star-dataset/face_dataset_hist_mollje.png" alt="alt text" title="Figure_1"></p>
-
-          
+          <p>There have been several datasets for star face recognition such as IMDB and <a href="https://www.msceleb.org/" target="_blank" rel="noopener">MS Celeb</a>.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cover all living and movie styles. Therefore, I create a star dataset in which part of stars have dozens of images while the others have just one image for each.  Most stars are well known as least in 2019 year..I will record the process of creating it in the following. All codes are available in my Github.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/21/star-dataset/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
