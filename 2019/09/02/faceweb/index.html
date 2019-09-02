@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="There have been several datasets for star face recognition such as IMDB and MS Celeb.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cove">
+<meta name="description" content="This is the website for celebrity face recognition. You can upload one image with one or more celebrities in it. The server will receive the image and return a json list which contains one or more cel">
 <meta name="keywords" content="try">
 <meta property="og:type" content="article">
-<meta property="og:title" content="New Dataset for Celeb Recognition">
-<meta property="og:url" content="https://arxrean.github.io/2019/08/21/star-dataset/index.html">
+<meta property="og:title" content="faceweb">
+<meta property="og:url" content="https://arxrean.github.io/2019/09/02/faceweb/index.html">
 <meta property="og:site_name" content="AIEEEr">
-<meta property="og:description" content="There have been several datasets for star face recognition such as IMDB and MS Celeb.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cove">
+<meta property="og:description" content="This is the website for celebrity face recognition. You can upload one image with one or more celebrities in it. The server will receive the image and return a json list which contains one or more cel">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png">
-<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566440487/blog/star-dataset/original_dataset_hist_txhfim.png">
-<meta property="og:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566457293/blog/star-dataset/face_dataset_hist_mollje.png">
-<meta property="og:updated_time" content="2019-08-26T05:10:38.854Z">
+<meta property="og:updated_time" content="2019-09-02T08:01:47.989Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="New Dataset for Celeb Recognition">
-<meta name="twitter:description" content="There have been several datasets for star face recognition such as IMDB and MS Celeb.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cove">
-<meta name="twitter:image" content="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png">
+<meta name="twitter:title" content="faceweb">
+<meta name="twitter:description" content="This is the website for celebrity face recognition. You can upload one image with one or more celebrities in it. The server will receive the image and return a json list which contains one or more cel">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://arxrean.github.io/2019/08/21/star-dataset/">
+  <link rel="canonical" href="https://arxrean.github.io/2019/09/02/faceweb/">
 
 
 
 
 
-  <title>New Dataset for Celeb Recognition | AIEEEr</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>faceweb | AIEEEr</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -237,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://arxrean.github.io/2019/08/21/star-dataset/">
+    <link itemprop="mainEntityOfPage" href="https://arxrean.github.io/2019/09/02/faceweb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ziyi Kou">
@@ -254,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">New Dataset for Celeb Recognition</h1>
+          <h1 class="post-title" itemprop="name headline">faceweb</h1>
         
 
         <div class="post-meta">
@@ -266,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T02:43:35+00:00">
-                2019-08-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-02T07:51:40+00:00">
+                2019-09-02
               </time>
             
 
@@ -304,97 +300,14 @@
       
 
       
-        <p>There have been several datasets for star face recognition such as IMDB and <a href="https://www.msceleb.org/" target="_blank" rel="noopener">MS Celeb</a>.  However,  the stars in it can be a little out of date. Besides, each star has only few samples which may not cover all living and movie styles. Therefore, I create a star dataset in which part of stars have dozens of images while the others have just one image for each.  Most stars are well known as least in 2019 year..I will record the process of creating it in the following. All codes are available in my Github.</p>
-<a id="more"></a>
-<h1 id="Data-Crawl"><a href="#Data-Crawl" class="headerlink" title="Data Crawl"></a>Data Crawl</h1><p>I firstly crawled star information and their images from <a href="http://www.happyjuzi.com/" target="_blank" rel="noopener">happyjuzi.com</a> website and many other small websites.</p>
-<h2 id="Star-Info"><a href="#Star-Info" class="headerlink" title="Star Info"></a>Star Info</h2><p>I crawled each star based on their unique url id and obtained several properties that may help in the future model training, as denoted in the following table.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>id</td>
-<td>the unique id for each star</td>
-</tr>
-<tr>
-<td>name</td>
-<td>the original name that may be Chinese</td>
-</tr>
-<tr>
-<td>e_name</td>
-<td>English name if they have</td>
-</tr>
-<tr>
-<td>star_type</td>
-<td>actor/(Internet) celebrity/others</td>
-</tr>
-<tr>
-<td>star_other</td>
-<td>other info like their sign</td>
-</tr>
-<tr>
-<td>area</td>
-<td>country they are from</td>
-</tr>
-<tr>
-<td>desc</td>
-<td>a few sentences to describe them</td>
-</tr>
-<tr>
-<td>reels</td>
-<td>their works</td>
-</tr>
-<tr>
-<td>gender</td>
-<td>1 for male while 0 for female</td>
-</tr>
-</tbody></table>
-<h2 id="Star-Images"><a href="#Star-Images" class="headerlink" title="Star Images"></a>Star Images</h2><p>The images consists of two parts. The first part is obtained from image repository of each star while the second part is from their profile pictures, which is denoted in the following image.</p>
-<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566355729/blog/star-dataset/1_ggikv6.png" alt="alt text" title="Figure_1"></p>
-<p>The key images are much more likely to be true images for corresponding stars compared with other images, since many noisy or even unrelated images will be uploaded by users.  The following table illustrates basic info for my original dataset.</p>
-<table>
-<thead>
-<tr>
-<th>Star</th>
-<th>Images</th>
-<th>Key</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>13715</td>
-<td>224438</td>
-<td>13322</td>
-</tr>
-</tbody></table>
-<p>We can see most stars have their key images. The distribution of the number of images per each star is shown in the following figure.</p>
-<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566440487/blog/star-dataset/original_dataset_hist_txhfim.png" alt="alt text" title="Figure_1"></p>
-<h1 id="Data-Preprocess"><a href="#Data-Preprocess" class="headerlink" title="Data Preprocess"></a>Data Preprocess</h1><p>Since a large part of scrawled data are just unrelated images with targeted stars, we need to preprocess data in several steps.</p>
-<h2 id="Remove-similar-Images"><a href="#Remove-similar-Images" class="headerlink" title="Remove similar Images"></a>Remove similar Images</h2><p>Different fans for one star may upload a same image. I use pHash to hash each image per star and compare each two image hashes, calculating their euclidean distance. If their similarity is higher than the predefined threshold, I will mark one of them as the duplicate and remove it.</p>
-<h2 id="Remove-group-stars"><a href="#Remove-group-stars" class="headerlink" title="Remove group stars"></a>Remove group stars</h2><p>There are some groups which consists of several or many stars. But since each single star will be also recorded in many website, these group labels will influence the training. So I just remove these group stars. </p>
-<p>I use pretrained MTCNN model to extract faces in Key Images. Since these images always only contain the single star face if the star is not a group. I set the threshold for MTCNN very high and remove the star if the model detect more than one face.</p>
-<h2 id="Extract-Faces"><a href="#Extract-Faces" class="headerlink" title="Extract Faces"></a>Extract Faces</h2><p>I extract faces in each image, if there are more than two faces in one image, I just remove it. If there are two faces, I check it and choose the right one. The face is $112\times 112$  gray and aligned by landmarks.</p>
-<h2 id="Remove-Similar-or-Unrelated-Faces"><a href="#Remove-Similar-or-Unrelated-Faces" class="headerlink" title="Remove Similar or Unrelated  Faces"></a>Remove Similar or Unrelated  Faces</h2><p>For each star, there may exist same face image or other faces which are not the targeted star.</p>
-<p>I first use pretrained lightCNN to extract 256-d features for each face. Then I use both euclidean distance and cosine similarity to calculate the distance between two faces. If the value is higher than $thd1$ or lower than $thd2$, I remove one of the raw face image. Please note the dataset is very sensitive to $thd1$ and $thd2$. Therefore I need to make action only if there is a very high confidence.</p>
-<p>Then I finetuned a gender classification model based on crawled data. The model check each raw face. If a face image is recognized as wrong gender with high score, I just remove it. </p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>The following table is the distribution of all stars.</p>
-<table>
-<thead>
-<tr>
-<th>Total Images</th>
-<th>Total stars</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>80062</td>
-<td>9233</td>
-</tr>
-</tbody></table>
-<p>And the number of images per star is in the following figure:</p>
-<p><img src="https://res.cloudinary.com/dhortnuos/image/upload/v1566457293/blog/star-dataset/face_dataset_hist_mollje.png" alt="alt text" title="Figure_1"></p>
-<p>More infomation for model training and inference can be seen in my future article. The whole data can be seen in this <a href="https://pan.baidu.com/s/19RNnOFrCiB7Bw5fMxb3MyA" target="_blank" rel="noopener">Baidu drive link</a>.</p>
+        <p>This is the <a href="http://18.221.4.227:8000/face/" target="_blank" rel="noopener">website</a> for celebrity face recognition.</p>
+<p>You can upload one image with one or more celebrities in it. The server will receive the image and return a json list which contains one or more celebrity information.</p>
+<p>There are several points to note:</p>
+<ol>
+<li>I use a pretrained MTCNN to extract faces in images. Therefore some faces may be not detected. Then the result json list won’t contain them.</li>
+<li>No matter whether there is actually the targeted celebrity in the back database, the server will always return the celebrity who is most similar with the input one. You need to check the similarity item in json to determine by yourself.</li>
+<li>You can also use the website as an API in the codes like requests in python3. The result is the same json list.</li>
+</ol>
 
       
     </div>
@@ -425,8 +338,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/12/summary-fsl/" rel="next" title="A Survey on Few-Shot Learning">
-                <i class="fa fa-chevron-left"></i> A Survey on Few-Shot Learning
+              <a href="/2019/08/26/celeb-reco-api/" rel="next" title="celeb_reco_api">
+                <i class="fa fa-chevron-left"></i> celeb_reco_api
               </a>
             
           </div>
@@ -434,10 +347,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/26/celeb-reco-api/" rel="prev" title="celeb_reco_api">
-                celeb_reco_api <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,17 +398,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -568,22 +468,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Crawl"><span class="nav-number">1.</span> <span class="nav-text">Data Crawl</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Star-Info"><span class="nav-number">1.1.</span> <span class="nav-text">Star Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Star-Images"><span class="nav-number">1.2.</span> <span class="nav-text">Star Images</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Preprocess"><span class="nav-number">2.</span> <span class="nav-text">Data Preprocess</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-similar-Images"><span class="nav-number">2.1.</span> <span class="nav-text">Remove similar Images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-group-stars"><span class="nav-number">2.2.</span> <span class="nav-text">Remove group stars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extract-Faces"><span class="nav-number">2.3.</span> <span class="nav-text">Extract Faces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Similar-or-Unrelated-Faces"><span class="nav-number">2.4.</span> <span class="nav-text">Remove Similar or Unrelated  Faces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">2.5.</span> <span class="nav-text">Result</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
