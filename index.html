@@ -26,6 +26,76 @@ a {
 .caption>button {
     margin-top: 10px;
 }
+
+/* Publications Section */
+.pub-card {
+    background: #fff;
+    border-left: 4px solid #e74c3c;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.pub-body {
+    flex: 1;
+}
+.pub-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+.pub-authors {
+    font-size: 0.875rem;
+    color: #555;
+    margin-bottom: 2px;
+}
+.pub-authors .pub-me {
+    font-weight: 700;
+    color: #333;
+    text-decoration: underline dotted;
+}
+.pub-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.pub-venue {
+    display: inline-block;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.03em;
+}
+.pub-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-radius: 12px;
+    padding: 2px 10px;
+    text-decoration: none !important;
+    transition: background 0.15s, color 0.15s;
+}
+.pub-pdf:hover {
+    background: #e74c3c;
+    color: #fff !important;
+}
+.pub-pdf svg {
+    width: 12px;
+    height: 12px;
+}
 </style>
 
 <body class="theme-red">
@@ -285,24 +355,167 @@ a {
     <div class="vg-page2 page-about" id="pub" style="padding-bottom: 5px;">
         <div class="container py-5" style="padding-top: 20px !important; padding-bottom: 20px !important;">
             <h1 class="fw-normal wow fadeIn">Main Publications</h1>
-            <ul>
-                <li><i>RAt: Injecting Implicit Bias for Text-To-Image Prompt Refinement Models</i>, 1st Author, EMNLP'24</li>
-                <li><i>FaDE: A Face Segment Driven Identity Anonymization Framework For Fair Face Recognition</i>, 1st Author, CIKM'24</li>
-                <li><i>LeMon: Automating Portrait Generation for Zero-Shot Story Visualization with Multi-Character Interactions</i>, 1st Author, KDD'24</li>
-                <li><i>Modeling Sequential Collaborative User Behaviors for Seller-aware Next Basket Recommendation</i>, 1st Author, CIKM'23</li>
-                <li><i>A Controllable Prompt Adversarial Attacking Framework for Black-Box Text Guided Image Generation Models</i>, 1st Author, IJCAI'23</li>
-                <li><i>A Crowd-AI Duo Relational Graph Learning Framework Towards Social Impact Aware Photo Classification</i>, 2nd Author, AAAI'23</li>
-                <li><i>A Web Crowdsourcing Based Face Partition Approach Towards Privacy-Aware Face Recognition</i>, 1st Author, WWW'22</li>
-                <li><i>A Duo-Generative Approach to Explainable Multimodal COVID-19 Misinformation Detection</i>, co-1st Author, WWW'22</li>
-                <li><i>Human-AI Interaction Towards Natural Language Explanation based COVID-19 Misinformation Detection</i>, 1st Author, IJCAI'22</li>
-                <li><i>A Crowdsourcing Multi-Modal Knowledge Graph Approach to Explainable Fauxtography Detection</i>, 1st Author, CSCW'22</li>
-                <li><i>A Hierarchical Crowdsource Knowledge Graph Approach to Explainable COVID-19 Misinformation Detection</i>, 1st Author, GROUP'22</li>
-                <li><i>Improve CAM with Auto-adapted Segmentation and Co-supervised Augmentation</i>, 1st Author, WACV'21</li>
-                <li>ExgFair: A Crowdsourcing Data Exchange Approach To Fair Human Face Datasets Augmentation</i>, 1st Author, BigData'21</li>
-                <li><i>Faircrowd: Fair human face dataset sampling via batch-level crowdsourcing bias inference</i>, 1st Author, IWQOS'21</li>
-                <li><i>What comprises a good talking-head video generation</i>, co-1st Author, CVPRW'20</li>
-                <li><i>Exfaux: A weakly supervised approach to explainable fauxtography detection</i>, 1st Author, BigData'20</li>
-            </ul>
+            <p class="text-muted mb-4" style="font-size:0.9rem;">* denotes equal contribution</p>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves</div>
+                    <div class="pub-authors">Xinyu Zhang, <span class="pub-me">Ziyi Kou</span>, Chuan Qin, Mia Huang, Ergys Ristani, Ankit Kumar, Lele Chen, Kun He, Abdeslam Boularias, Li Guan</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">CVPR 2026</span>
+                        <!-- <a class="pub-pdf" href="YOUR_PDF_LINK" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">AirGlove: Exploring Egocentric 3D Hand Tracking and Appearance Generalization for Sensing Gloves</div>
+                    <div class="pub-authors">Wenhui Cui, <span class="pub-me">Ziyi Kou</span>, Chuan Qin, Ergys Ristani, Li Guan</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">ICASSP 2026</span>
+                        <!-- <a class="pub-pdf" href="YOUR_PDF_LINK" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">Adaptive and Context-rich Generative Self-supervised Learning on Graphs</div>
+                    <div class="pub-authors">Yijun Tian, Chuxu Zhang, <span class="pub-me">Ziyi Kou</span>, Zheyuan Liu, Xiangliang Zhang, Nitesh V Chawla</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">AAAI 2026</span>
+                        <!-- <a class="pub-pdf" href="YOUR_PDF_LINK" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">Flowing from reasoning to motion: Learning 3d hand trajectory prediction from egocentric human interaction videos</div>
+                    <div class="pub-authors">Mingfei Chen, Yifan Wang, Zhengqin Li, Homanga Bharadhwaj, Yujin Chen, Chuan Qin, <span class="pub-me">Ziyi Kou</span>, Yuan Tian, Eric Whitmire, Rajinder Sodhi, Hrvoje Benko, Eli Shlizerman, Yue Liu</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">Arxiv (2025)</span>
+                        <!-- <a class="pub-pdf" href="YOUR_PDF_LINK" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">RAt: Injecting Implicit Bias for Text-To-Image Prompt Refinement Models</div>
+                    <div class="pub-authors"><span class="pub-me">Ziyi Kou</span>, Shichao Pei, Meng Jiang, Xiangliang Zhang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">EMNLP 2024</span>
+                        <!-- <a class="pub-pdf" href="YOUR_PDF_LINK" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">LeMon: Automating Portrait Generation for Zero-Shot Story Visualization with Multi-Character Interactions</div>
+                    <div class="pub-authors"><span class="pub-me">Ziyi Kou</span>, Shichao Pei, Xiangliang Zhang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">KDD 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">A Controllable Prompt Adversarial Attacking Framework for Black-Box Text Guided Image Generation Models</div>
+                    <div class="pub-authors"><span class="pub-me">Ziyi Kou</span>, Shichao Pei, Yijun Tian, Xiangliang Zhang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">IJCAI 2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">A Crowd-AI Duo Relational Graph Learning Framework Towards Social Impact Aware Photo Classification</div>
+                    <div class="pub-authors">Yang Zhang, <span class="pub-me">Ziyi Kou</span>, Lanyu Shang, Huimin Zeng, Zhenrui Yue, Dong Wang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">AAAI 2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">A Web Crowdsourcing Based Face Partition Approach Towards Privacy-Aware Face Recognition</div>
+                    <div class="pub-authors"><span class="pub-me">Ziyi Kou</span>, Lanyu Shang, Yang Zhang, Siyu Duan, Dong Wang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">TheWebConf 2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">A Duo-Generative Approach to Explainable Multimodal COVID-19 Misinformation Detection</div>
+                    <div class="pub-authors">Lanyu Shang, <span class="pub-me">Ziyi Kou</span>, Yang Zhang, Dong Wang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">TheWebConf 2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">Human-AI Interaction Towards Natural Language Explanation based COVID-19 Misinformation Detection</div>
+                    <div class="pub-authors"><span class="pub-me">Ziyi Kou</span>, Lanyu Shang, Yang Zhang, Zhenrui Yue, Huimin Zeng, Dong Wang</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">IJCAI 2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">Improve CAM with Auto-adapted Segmentation and Co-supervised Augmentation</div>
+                    <div class="pub-authors"><span class="pub-me">Ziyi Kou</span>, Guofeng Cui, Shaojie Wang, Wentian Zhao, Chenliang Xu</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">WACV 2021</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">How to make a BLT sandwich? learning to reason towards understanding web instructional videos</div>
+                    <div class="pub-authors">Shaojie Wang, Wentian Zhao, <span class="pub-me">Ziyi Kou</span>, Chenliang Xu</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">WACV 2021</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+
+                <div class="pub-body">
+                    <div class="pub-title">Talking-head generation with rhythmic head motion</div>
+                    <div class="pub-authors">Lele Chen, Guofeng Cui, Celong Liu, Zhong Li, <span class="pub-me">Ziyi Kou</span>, Yi Xu, Chenliang Xu</div>
+                    <div class="pub-footer">
+                        <span class="pub-venue">ECCV 2020</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="./assets/js/jquery-3.5.1.min.js"></script>
